@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write Tomorrow's Plan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+  // Apply saved theme on page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  });
+</script>
+
+</head>
+<body>
+
+  <header>
+    <h1>Tomorrow's Plan</h1>
+  </header>
+
+  <div class="container">
+    <<section class="plan-edit-section">
+  <textarea id="planInput" rows="10" placeholder="Write your plan for tomorrow..."></textarea>
+  <br />
+  <button onclick="savePlan()">Save Plan</button>
+  <button onclick="clearPlan()">Clear Plan</button>
+  <a href="index.html"><button>Back to Home</button></a>
+</section>
+
+  </div>
+
+  <script src="plan.js"></script>
+</body>
+</html>

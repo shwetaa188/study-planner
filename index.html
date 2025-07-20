@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Productivity Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Smart Productivity Planner</h1>
+  </header>
+
+  <div class="container">
+    <nav class="navbar">
+  <button onclick="scrollToSection('checklistSection')">Checklist</button>
+  <button onclick="scrollToSection('PlanSection')">Tomorrow's Plan</button>
+  <button onclick="scrollToSection('TimeTableSection')">Timetable</button>
+  <button onclick="scrollToSection('TrackerSection')">Daily Tracker</button>
+  <button onclick="scrollToSection('ResourceSection')">Resources</button>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+</nav>
+
+
+    
+      <section id="TimeTableSection"  class="timetable-section">
+  <h2><i class="fas fa-calendar-alt"></i> Your Time-Table</h2>
+  <div class="timetable">
+    <table id="timetable">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="timetable-body">
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+    <button onclick="addRow()">+ Add Time Slot</button>
+    <button onclick="saveTimetable()">Save Timetable</button>
+    <button onclick="clearTimetable()">Clear Timetable</button>
+  </div>
+</section>
+
+
+    
+
+    <section id="checklistSection" class="checklist-section">
+       <h2><i class="fas fa-check-circle"></i> Your Checklist</h2>
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>
+    </section>
+
+    <section id="ResourceSection" class="resources-section">
+  <h2><i class="fas fa-book-open"></i> Resources You Use</h2>
+  
+  <div class="resource-form">
+    <input type="text" id="resourceName" placeholder="Resource Name (e.g., Striver DSA)" />
+    <input type="url" id="resourceLink" placeholder="Link (https://...)" />
+    <input type="text" id="resourceNote" placeholder="Optional note (e.g., Start from Day 15)" />
+    <button onclick="addResource()">Add Resource</button>
+  </div>
+
+  <ul id="resourceList"></ul>
+</section>
+
+
+    <section id="TrackerSection" class="tracker-section">
+  <h2><i class="fas fa-chart-line"></i> Daily Tracker</h2>
+
+  <ul id="habitList">
+    <li><label><input type="checkbox" class="habit-check" data-habit="study"> Study for 5 hours</label></li>
+    <li><label><input type="checkbox" class="habit-check" data-habit="water"> Drink 8 glasses of water</label></li>
+    <li><label><input type="checkbox" class="habit-check" data-habit="walk"> Walk for 30 mins</label></li>
+    <li><label><input type="checkbox" class="habit-check" data-habit="exercise"> 20 mins of exercise</label></li>
+    <li><label><input type="checkbox" class="habit-check" data-habit="journal"> Write journal / reflect</label></li>
+  </ul>
+</section>
+
+
+    
+    <section id="PlanSection" class="plan-section">
+  <h2><i class="fas fa-calendar-day"></i> Tomorrow's Plan</h2>
+  <p id="planPreview">✨ View your plan for tomorrow</p>
+  <a href="plan.html">
+    <button>View / Edit Plan</button>
+  </a>
+</section>
+
+
+  </div>
+
+  <!-- Link to JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+

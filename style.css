@@ -1,0 +1,333 @@
+/*  Light Theme (Default) */
+:root {
+  --bg-color: #fbefe4;         /* creamy peach */
+  --text-color: #333333;       /* soft black */
+  --accent-color: #d698a4;     /* dusty rose pink */
+}
+
+/*  Dark Theme */
+body.dark-mode {
+  --bg-color: #2c2b30;         /* muted lilac grey */
+  --text-color: #f8f8f8;       /* off-white */
+  --accent-color: #336984;     /* pastel sky blue */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 200;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, var(--accent-color), #c78db8);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sections */
+section {
+  background-color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease;
+  scroll-margin-top: 80px;
+}
+
+section h2 {
+  margin-top: 0;
+  color: #1b1b1b;
+}
+
+section:hover {
+  transform: scale(1.01) rotate(0.3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon animation */
+h2 i {
+  margin-right: 10px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+section:hover h2 i {
+  transform: rotate(-5deg) scale(1.1);
+  color: #fff9a7;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #b788c4;
+  padding: 0.5rem;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar button {
+  padding: 0.4rem 1rem;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.navbar button:hover {
+  background: #b1729d;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+li {
+  background: #f3e6f9;
+  color: #000;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+li.checked {
+  text-decoration: line-through;
+  background: #dbc4e5;
+  color: #555;
+}
+
+/* Inputs & Buttons */
+input[type="text"],
+textarea {
+  padding: 0.5rem;
+  width: 70%;
+  border: none;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  background-color: #f5e6ff;
+  color: #000;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #b1729d;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #d8a7b1;
+}
+
+/* Checklist */
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #efe3ff;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+#taskList li span.checked {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #a40000;
+  transition: transform 0.2s;
+}
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #ff0000;
+}
+
+/* Timetable */
+.timetable {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+table th {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+table td[contenteditable="true"] {
+  background-color: #f5e6ff;
+  transition: background 0.2s;
+}
+table td[contenteditable="true"]:focus {
+  background-color: #fff8c5;
+  outline: none;
+}
+
+table td input[type="text"] {
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  background: #f3e8ff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.timetable button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Resources Section */
+.resources-section input {
+  margin: 0.4rem 0.2rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  width: calc(30% - 10px);
+  background-color: #f2e4ff;
+}
+
+.resource-form {
+  margin-bottom: 1rem;
+}
+
+#resourceList {
+  list-style: none;
+  padding: 0;
+}
+
+#resourceList li {
+  background: #f8f1ff;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource-content {
+  flex: 1;
+}
+
+.resource-actions button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+/* Daily Tracker */
+.tracker-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tracker-section li {
+  background-color: #efe3ff;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.tracker-section input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+
+
