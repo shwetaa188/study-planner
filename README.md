@@ -3,7 +3,7 @@
 A clean and minimal **Study Planner** built using **HTML, CSS, and JavaScript**, designed to help you plan your daily goals efficiently.  
 It supports **dark mode** and saves your tasks locally so your progress is never lost.
 
-🔗 **Live Demo:** [Click to View](study-planner-by-shweta.netlify.app)
+🔗 **Live Demo:** [Click to View](https://study-planner-by-shweta.netlify.app/)
 
 ---
 
@@ -45,6 +45,6 @@ study-planner/
 
 ##  Connect With Me
 
-- [LinkedIn](www.linkedin.com/in/shweta-kumari18 )
+- [LinkedIn](https://www.linkedin.com/in/shweta-kumari18/ )
 - Email: shweta181005@gmail.com
 
